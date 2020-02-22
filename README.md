@@ -1,6 +1,8 @@
 # Ritto smart home doorbell
 
-Ritto 7360 Doorbell (Wohntelefon) instructions
+Ritto 7360 Doorbell (Wohntelefon) instructions (incl. Home Assistant lovelace integration)
+
+![Home assistant lovelace](home-assistant/ha_lovelace.png)
 
 ## Hardware
 
