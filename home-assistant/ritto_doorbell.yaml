@@ -1,0 +1,31 @@
+binary_sensor:
+  - platform: mqtt
+    name: "Ritto Doorbell"
+    state_topic: "cmnd/ring_sensor/POWER3"
+    payload_on: "TOGGLE"
+    availability_topic: "tele/doorbell/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    off_delay: 30
+
+switch:
+  - platform: mqtt
+    name: "Ritto Doorbell - Buzz Door"
+    command_topic: "cmnd/doorbell/POWER1"
+    state_topic: "stat/doorbell/POWER1"
+    availability_topic: "tele/doorbell/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Ritto Doorbell - Loudness"
+    command_topic: "cmnd/doorbell/POWER2"
+    state_topic: "stat/doorbell/POWER2"
+    availability_topic: "tele/doorbell/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
