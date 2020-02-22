@@ -1,0 +1,29 @@
+resources:
+  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+    type: module
+  - url: /community_plugin/logbook-card/logbook-card.js
+    type: js
+
+views:
+  - title: main
+    cards:
+      - type: entities
+        title: Doorbell
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.ritto_doorbell
+          - entity: switch.ritto_doorbell_buzz_door
+            icon: mdi:door
+          - entity: switch.ritto_doorbell_loudness
+            icon: mdi:volume-off
+      - type: 'custom:logbook-card'
+        title: Doorbell activity
+        desc: false
+        entity: binary_sensor.ritto_doorbell
+        hiddenState:
+          - "off"
+        show:
+          end_date: false
+          start_date: true
+          duration: false
+          state: false
